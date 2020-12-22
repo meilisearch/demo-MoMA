@@ -2,6 +2,16 @@ const MeiliSearch = require('meilisearch')
 const dataset = require('./Artworks.json')
 require('dotenv').config()
 
+Object.defineProperty(Array.prototype, 'chunk', {
+    value: function(chunkSize){
+        var temporal = [];
+        for (var i = 0; i < this.length; i+= chunkSize){
+            temporal.push(this.slice(i,i+chunkSize));
+        }                
+        return temporal;
+    }
+});
+
 ;(async () => {
   // Create client
   const client = new MeiliSearch({
@@ -52,15 +62,8 @@ require('dotenv').config()
   await index.updateSettings(settings)
   console.log('Settings added to "artWorks" index.')
 
-  // Add documents
-  const batchedDataSet = batch(dataset, 500)
-  console.log('Adding documents...')
-  for (let i = 0; i < batchedDataSet.length; i++) {
-    const { updateId } = await index.addDocuments(batchedDataSet[i])
-    await index.waitForPendingUpdate(updateId, {
-      timeOutMs: 100000
-    })
-  }
+  dataset.chunk(10000).forEach(batch => index.addDocuments(batch))
+
   console.log('Documents added to "artWorks" index.')
 })()
 
