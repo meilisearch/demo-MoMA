@@ -27,7 +27,7 @@
     "axios": "^0.22.0",
     "bootstrap": "^5.1.1",
     "bootstrap-vue": "^2.21.1",
-    "core-js": "^3.18.1",
+    "core-js": "^3.18.2",
     "dotenv": "^10.0.0",
     "instantsearch.css": "^7.4.5",
     "lodash": "^4.17.21",
