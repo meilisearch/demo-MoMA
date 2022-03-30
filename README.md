@@ -1,3 +1,6 @@
+**Please note: since January 2022, this demo is now hosted at [https://github.com/meilisearch/demos/tree/main/src/MoMA](https://github.com/meilisearch/demos/tree/main/src/MoMA)**
+
+---
 <p align="center">
   <img src="https://raw.githubusercontent.com/meilisearch/integration-guides/master/assets/logos/logo.svg" alt="MeiliSearch-Vue" width="200" height="200" />
 </p>
