@@ -32,7 +32,7 @@
     "instantsearch.css": "^7.4.5",
     "lodash": "^4.17.21",
     "meilisearch": "^0.22.1",
-    "vue": "^2.6.12",
+    "vue": "^3.2.31",
     "vue-instantsearch": "^3.0.3"
   },
   "devDependencies": {
